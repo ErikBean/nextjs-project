@@ -7,8 +7,8 @@ import { useEffect } from 'react';
 // and the root stage PIXI.Container
 
 const loadPIXI = () => {
-  const PIXI = require('pixi.js');
   if (typeof window === 'undefined') return;
+  const PIXI = require('pixi.js');
   const app = new PIXI.Application();
   // The application will create a canvas element for you that you
   // can then insert into the DOM

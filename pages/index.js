@@ -1,5 +1,6 @@
 import Head from 'next/head';
 
+const routes = ['/pixi-page', '/cards'];
 export default function Home() {
   return (
     <div className="container">
@@ -9,12 +10,22 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="title">
-          <a href="/pixi-page">Next</a>
-        </h1>
+        <h1 className="title">Home</h1>
+        <ul className="routes">
+          {routes.map((route) => (
+            <li>
+              <a href={route}>{route.replace('/', '')}</a>
+            </li>
+          ))}
+        </ul>
       </main>
 
-      <style jsx>{``}</style>
+      <style jsx>{`
+        .routes {
+          list-style: none;
+          font-size: 2em;
+        }
+      `}</style>
 
       <style jsx global>{``}</style>
     </div>
