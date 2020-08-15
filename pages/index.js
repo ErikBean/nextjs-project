@@ -10,7 +10,7 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          <a href="/another-page">Next</a>
+          <a href="/pixi-page">Next</a>
         </h1>
       </main>
 
