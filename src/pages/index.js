@@ -26,8 +26,6 @@ export default function Home() {
           font-size: 2em;
         }
       `}</style>
-
-      <style jsx global>{``}</style>
     </div>
   );
 }
