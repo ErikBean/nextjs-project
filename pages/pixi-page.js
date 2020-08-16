@@ -24,31 +24,23 @@ const loadPIXI = () => {
 
   // load the texture we need
   app.loader.add('card', '/png/9_of_clubs.png').load((loader, resources) => {
-    // This creates a texture from a 'card.png' image
     const img = new PIXI.Sprite(resources.card.texture);
 
-    // Setup the position of the bunny
-    img.x = app.renderer.width / 2;
-    img.y = app.renderer.height / 2;
+    img.x = 50;
+    img.y = app.renderer.height - img.height - 50;
 
-    // img.width = img.width / 4;
-    // img.height = img.height / 4;
-    // Rotate around the center
-    img.anchor.x = 0.5;
-    img.anchor.y = 0.5;
+    const graphics = new PIXI.Graphics();
+    graphics.beginFill(0xffffff);
+    graphics.drawRoundedRect(img.x, img.y, img.width, img.height, 10);
 
-    // Add the bunny to the scene we are building
+    graphics.endFill();
+
+    app.stage.addChild(graphics);
     app.stage.addChild(img);
-
-    // Listen for frame updates
-    app.ticker.add(() => {
-      // each frame we spin the bunny around a bit
-      img.rotation += 0.01;
-    });
   });
 };
 
-export default function AnotherPage() {
+export default function Game() {
   useEffect(loadPIXI, []);
   return (
     <div className="container">
